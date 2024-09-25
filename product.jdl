@@ -1,0 +1,7 @@
+entity Product {
+	partNo Long required
+	name String required
+	description String
+	isForSale Boolean required
+	price BigDecimal required
+}

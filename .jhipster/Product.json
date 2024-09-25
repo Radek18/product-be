@@ -1,0 +1,35 @@
+{
+  "annotations": {
+    "changelogDate": "20240925082247"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "partNo",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isForSale",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Product",
+  "relationships": [],
+  "searchEngine": "no"
+}
