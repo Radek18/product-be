@@ -776,9 +776,10 @@
         "http://localhost:*",
         "https://127.0.0.1:*",
         "https://localhost:*",
-        "https://oauth.pstmn.io/v1/callback"
+        "https://oauth.pstmn.io/v1/callback",
+        "http://localhost:5173/*"
       ],
-      "webOrigins": ["*"],
+      "webOrigins": ["http://localhost:5173"],
       "notBefore": 0,
       "bearerOnly": false,
       "consentRequired": false,
