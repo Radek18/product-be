@@ -769,7 +769,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "secret": "web_app",
+      "secret": "SIRAyO2zp8FyvKy3IUHeegzwL0qs2Tu7",
       "redirectUris": [
         "dev.localhost.ionic:*",
         "http://127.0.0.1:*",
@@ -777,9 +777,10 @@
         "https://127.0.0.1:*",
         "https://localhost:*",
         "https://oauth.pstmn.io/v1/callback",
+        "http://localhost:3000/*",
         "http://localhost:5173/*"
       ],
-      "webOrigins": ["http://localhost:5173"],
+      "webOrigins": ["http://localhost:3000","http://localhost:5173"],
       "notBefore": 0,
       "bearerOnly": false,
       "consentRequired": false,
@@ -787,7 +788,7 @@
       "implicitFlowEnabled": true,
       "directAccessGrantsEnabled": false,
       "serviceAccountsEnabled": false,
-      "publicClient": true,
+      "publicClient": false,
       "frontchannelLogout": false,
       "protocol": "openid-connect",
       "attributes": {
