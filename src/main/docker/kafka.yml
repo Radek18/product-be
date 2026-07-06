@@ -1,8 +1,9 @@
 # This configuration is intended for development purpose, it's **your** responsibility to harden it for production
-name: product
 services:
   kafka:
+    container_name: kafka
     image: confluentinc/cp-kafka:7.7.1
+    restart: unless-stopped
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
     ports:
@@ -17,10 +18,20 @@ services:
       KAFKA_ADVERTISED_HOST_NAME: kafka
     labels:
       org.springframework.boot.ignore: true
+    networks:
+      - backend
   zookeeper:
+    container_name: zookeeper
     image: confluentinc/cp-zookeeper:7.7.1
+    restart: unless-stopped
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
     labels:
       org.springframework.boot.ignore: true
+    networks:
+      - backend
+
+networks:
+  backend:
+    external: true

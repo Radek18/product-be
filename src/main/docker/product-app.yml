@@ -1,0 +1,31 @@
+name: product
+services:
+  product-app:
+    container_name: product
+    image: product
+    restart: unless-stopped
+    environment:
+      - _JAVA_OPTIONS=-Xmx1g -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - MANAGEMENT_PROMETHEUS_METRICS_EXPORT_ENABLED=true
+      - SPRING_R2DBC_URL=r2dbc:postgresql://postgresql:5432/product
+      - SPRING_LIQUIBASE_URL=jdbc:postgresql://postgresql:5432/product
+      - SPRING_R2DBC_PASSWORD=${POSTGRES_PASSWORD}
+      - SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS=kafka:29092
+    ports:
+      - 127.0.0.1:8081:8080
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - -f
+        - http://localhost:8080/management/health
+      interval: 5s
+      timeout: 5s
+      retries: 40
+    networks:
+      - backend
+
+networks:
+  backend:
+    external: true

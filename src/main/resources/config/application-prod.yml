@@ -37,8 +37,8 @@ spring:
     url: jdbc:postgresql://localhost:5432/product
   r2dbc:
     url: r2dbc:postgresql://localhost:5432/product
-    username: product
-    password: password
+    username: postgres
+    password: ${POSTGRES_PASSWORD}
   thymeleaf:
     cache: true
 
